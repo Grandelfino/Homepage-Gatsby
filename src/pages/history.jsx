@@ -30,7 +30,7 @@ const pageQuery = graphql`
         autocross
         award
         carName
-        carNumber
+        carNum
         competition
         cost
         design
@@ -39,13 +39,13 @@ const pageQuery = graphql`
         endurance
         enduranceStatus
         place
+        presentation
         skidpad
         skidpadStatus
         startdate
         teams
         title
         total
-        presentation
       }
     }
   }
@@ -53,29 +53,44 @@ const pageQuery = graphql`
 
 const useStyles = makeStyles((theme) => ({
   root: {
-
+    marginBottom: theme.spacing(1)
   },
   table: {
-    minWidth: 750
+    minWidth: 750,
+  },
+  title: {
+    fontFamily: "Noto Sans JP",
+    margin: theme.spacing(2),
+  },
+  body: {
+    fontFamily: "Noto Sans JP"
   }
 }))
 
 const createRow = (event, status, scores) => {
-  const score = scores.shift()
-  const fullMark = scores.shift()
-  const rank = scores.shift()
+  const score = scores[0]
+  const fullMark = scores[1]
+  const rank = scores[2]
   return {event, status, score, fullMark, rank}
 }
 
 const RowTable = (props) => {
   const row = props.row
-  console.log(Object.values(row))
-  return(
-    <>
-      {Object.values(row).map((item) => (
-        <TableCell>{item.event}</TableCell>
-      ))}
-    </>
+  return (
+    Object.values(row).map((item) => (
+      <TableRow key={item.event}>
+        {(item.event === "コスト") && (
+          <TableCell rowSpan={3}>静的審査</TableCell>
+        )}
+        {(item.event === "アクセラレーション") && (
+          <TableCell rowSpan={5}>動的審査</TableCell>
+        )}
+        <TableCell align="center">{item.event}</TableCell>
+        <TableCell align="center">{item.status}</TableCell>
+        <TableCell align="right">{item.score}({item.fullMark})</TableCell>
+        <TableCell align="right">{item.rank}</TableCell>
+      </TableRow>
+    ))
   )
 }
 
@@ -109,11 +124,11 @@ const CreateTable = (props) => {
     createRow("エンデュランス", enduranceStatus, endurance),
     createRow("燃費", "-", efficiency),
   ]
-  console.log(staticRows[0])
+  console.log(data)
   const sum = createRow("総合成績", "-", total)
   return (
-    <TableContainer component={Paper}>
-      <Table className={classes.table} aria-label="history table">
+    <TableContainer component={Paper} className={classes.root} variant="outlined">
+      <Table className={classes.table} size="large" aria-label="history table">
         <TableHead>
           <TableRow>
             <TableCell align="center" colSpan={2}>
@@ -131,8 +146,11 @@ const CreateTable = (props) => {
           </TableRow>
         </TableHead>
         <TableBody>
-          <RowTable row={staticRows}/>
-          <RowTable row={dynamicRows}/>
+          <RowTable row={staticRows} total={sum}/>
+          <RowTable row={dynamicRows} total={sum}/>
+          <TableCell colSpan={3} align="center">総合成績</TableCell>
+          <TableCell align="right">{sum.score}({sum.fullMark})</TableCell>
+          <TableCell align="right">{sum.rank}</TableCell>
         </TableBody>
       </Table>
     </TableContainer>
@@ -144,7 +162,31 @@ const HistoryTable = (props) => {
   const {gcms: {histories}} = useStaticQuery(pageQuery)
   return (
     histories.map(({...history}) => (
-      <CreateTable history={history}/>
+      <>
+        <Typography variant="h1" className={classes.title}>{history.title}</Typography>
+        <Typography variant="h2" className={classes.title}>{history.competition}</Typography>
+        <Typography variant="body1" className={classes.body}>
+          <ul>
+            <li>
+              開催日: {history.startdate} ～ {history.endDate}
+            </li>
+            <li>
+              開催地: {history.place}
+            </li>
+            <li>
+              出場チーム数: {history.teams}
+            </li>
+            <li>
+              大会車両番号: {history.carNum}
+            </li>
+            <li>
+              参加車両: {history.carName}
+            </li>
+          </ul>
+        </Typography>
+        <CreateTable history={history}/>
+        <Divider/>
+      </>
     ))
   )
 }
@@ -152,8 +194,12 @@ const HistoryTable = (props) => {
 const HistoryPage = () => {
   return(
     <Layout>
-      {/* <NavBar/> */}
-      <HistoryTable/>
+      <NavBar/>
+      <Container maxWidth="md" style={{paddingTop: 50}}>
+        <Paper style={{paddingLeft: 20, paddingRight: 20}}>
+          <HistoryTable/>
+        </Paper>
+      </Container>
     </Layout>
   )
 }
