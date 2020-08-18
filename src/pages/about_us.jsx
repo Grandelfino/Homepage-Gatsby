@@ -26,6 +26,9 @@ const useStyle = makeStyles((theme) => ({
     fontFamily: "Noto Sans JP",
     fontSize: "2rem",
     margin: theme.spacing(3),
+    [theme.breakpoints.down('sm')]: {
+      fontSize: "1.5rem"
+    }
   },
   body: {
     fontFamily: "Noto Sans JP",

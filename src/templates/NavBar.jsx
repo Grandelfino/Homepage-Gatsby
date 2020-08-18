@@ -66,6 +66,9 @@ export default function NavBar() {
         <ListItem button component={Link} to="/history">
           <ListItemText primary="大会成績"/>
         </ListItem>
+        <ListItem button component={Link} to="/about_sae">
+          <ListItemText primary="SAEについて"/>
+        </ListItem>
       </List>
     </div>
   );

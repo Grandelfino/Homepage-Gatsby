@@ -61,6 +61,11 @@ const useStyles = makeStyles((theme) => ({
   title: {
     fontFamily: "Noto Sans JP",
     margin: theme.spacing(2),
+    fontSize: "2rem"
+  },
+  subTitle: {
+    fontFamily: "Noto Sans JP",
+    margin: theme.spacing(2),
   },
   body: {
     fontFamily: "Noto Sans JP"
@@ -164,7 +169,7 @@ const HistoryTable = (props) => {
     histories.map(({...history}) => (
       <>
         <Typography variant="h1" className={classes.title}>{history.title}</Typography>
-        <Typography variant="h2" className={classes.title}>{history.competition}</Typography>
+        <Typography variant="h2" className={classes.subTitle}>{history.competition}</Typography>
         <Typography variant="body1" className={classes.body}>
           <ul>
             <li>
@@ -195,8 +200,8 @@ const HistoryPage = () => {
   return(
     <Layout>
       <NavBar/>
-      <Container maxWidth="md" style={{paddingTop: 50}}>
-        <Paper style={{paddingLeft: 20, paddingRight: 20}}>
+      <Container maxWidth="md" style={{paddingTop: 55}}>
+        <Paper style={{paddingLeft: 20, paddingRight: 20, paddingTop: 1}} elevation={3}>
           <HistoryTable/>
         </Paper>
       </Container>
