@@ -11,7 +11,7 @@ const Image = ({ filename, alt }) => {
             relativePath
             name
             childImageSharp {
-              fluid(maxWidth: 1000, quality: 90, pngQuality: 50) {
+              fluid(maxWidth: 1000, quality: 90, pngQuality: 90) {
                 ...GatsbyImageSharpFluid_withWebp
               }
             }

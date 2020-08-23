@@ -19,7 +19,7 @@ import NavBar from '../templates/NavBar'
 const pageQuery = graphql`
   {
     gcms {
-      sponsors {
+      sponsors(orderBy: priority_ASC) {
         url
         brief
         company
@@ -48,7 +48,7 @@ export const useStyle = makeStyles((theme) => ({
   },
   brief: {
     textAlign: 'left',
-    fontFamily: 'Noto Sasn JP',
+    fontFamily: 'Noto Sans JP',
     fontSize: '1rem',
     color: "gray",
   },
@@ -102,9 +102,9 @@ export const Sponsors = (props) => {
   const classes = useStyle()
   const sponsors = props.sponsors
   return(
-    <Grid container justify="left" spacing={1} className={classes.cards}>
+    <Grid container spacing={1} className={classes.cards}>
       {sponsors.map(({...sponsor}) => (
-        <Grid item xs={12} sm={6} md={4} align="center" style={{display: "flex",}}>
+        <Grid item xs={12} sm={6} md={4} align="center" style={{display: "flex"}}>
           <SponsorCard sponsor={sponsor} />
         </Grid>
       ))}

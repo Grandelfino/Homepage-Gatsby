@@ -6,9 +6,9 @@ const theme = createMuiTheme({
   palette: {
     // type: 'dark', // ダークテーマ
     primary: {
-      light: blue["300"],
+      light: blue["400"],
       main: blue["500"],
-      dark: blue["700"]
+      dark: blue["600"]
     },
     // primary: red,
   },

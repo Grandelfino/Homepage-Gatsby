@@ -20,37 +20,6 @@ import {
 import Layout from '../templates/Layout'
 import NavBar from '../templates/NavBar'
 
-const pageQuery = graphql`
-  {
-    gcms {
-      histories {
-        accStatus
-        acceleration
-        autoclossStatus
-        autocross
-        award
-        carName
-        carNum
-        competition
-        cost
-        design
-        efficiency
-        endDate
-        endurance
-        enduranceStatus
-        place
-        presentation
-        skidpad
-        skidpadStatus
-        startdate
-        teams
-        title
-        total
-      }
-    }
-  }
-`
-
 const useStyles = makeStyles((theme) => ({
   root: {
     marginBottom: theme.spacing(1)
@@ -168,6 +137,7 @@ const HistoryTable = (props) => {
   return (
     histories.map(({...history}) => (
       <>
+      <div id={history.id}>
         <Typography variant="h1" className={classes.title}>{history.title}</Typography>
         <Typography variant="h2" className={classes.subTitle}>{history.competition}</Typography>
         <Typography variant="body1" className={classes.body}>
@@ -191,6 +161,7 @@ const HistoryTable = (props) => {
         </Typography>
         <CreateTable history={history}/>
         <Divider/>
+      </div>
       </>
     ))
   )
@@ -200,7 +171,7 @@ const HistoryPage = () => {
   return(
     <Layout>
       <NavBar/>
-      <Container maxWidth="md" style={{paddingTop: 55}}>
+      <Container maxWidth="lg" style={{paddingTop: 55}}>
         <Paper style={{paddingLeft: 20, paddingRight: 20, paddingTop: 1}} elevation={3}>
           <HistoryTable/>
         </Paper>
@@ -210,3 +181,35 @@ const HistoryPage = () => {
 }
 
 export default HistoryPage
+
+const pageQuery = graphql`
+  {
+    gcms {
+      histories(orderBy: title_DESC) {
+        id
+        accStatus
+        acceleration
+        autoclossStatus
+        autocross
+        award
+        carName
+        carNum
+        competition
+        cost
+        design
+        efficiency
+        endDate
+        endurance
+        enduranceStatus
+        place
+        presentation
+        skidpad
+        skidpadStatus
+        startdate
+        teams
+        title
+        total
+      }
+    }
+  }
+`

@@ -23,6 +23,7 @@ const pageQuery = graphql`
   {
     gcms {
       members {
+        id
         name
         role
         grade
@@ -71,6 +72,36 @@ const useStyle = makeStyles((theme) => ({
   }
 }))
 
+const MemberItem = (props) => {
+  const classes = props.classes
+  const member = props.member
+  return (
+    <Grid item xs={12} sm={6} className={classes.root}>
+      <Card style={{flexGrow: 1}} elevation={2} >
+        <Box className={classes.box}>
+          <CardContent className={classes.cardName}>
+            <Typography className={classes.textName}>
+              {member.name}
+            </Typography>
+          </CardContent>
+          <CardContent>
+            <Typography className={classes.cardGrade}>
+              {member.grade}
+            </Typography>
+            {member.charge.map(item => (
+              <Typography className={classes.cardCharge}>
+                <li>
+                  {item}
+                </li>
+              </Typography>
+            ))}
+          </CardContent>
+        </Box>
+      </Card>
+    </Grid>
+  )
+}
+
 const MemberList = (props) => {
   const classes = useStyle()
   const members = props.members
@@ -78,29 +109,7 @@ const MemberList = (props) => {
     <>
       <Grid container spacing={1}>
         {members.map(({...member}) => (
-          <Grid item xs={12} sm={6} className={classes.root}>
-            <Card style={{flexGrow: 1}} elevation={2}>
-              <Box className={classes.box}>
-                <CardContent className={classes.cardName}>
-                  <Typography className={classes.textName}>
-                    {member.name}
-                  </Typography>
-                </CardContent>
-                <CardContent>
-                  <Typography className={classes.cardGrade}>
-                    {member.grade}
-                  </Typography>
-                  {member.charge.map(item => (
-                    <Typography className={classes.cardCharge}>
-                      <li>
-                        {item}
-                      </li>
-                    </Typography>
-                  ))}
-                </CardContent>
-              </Box>
-            </Card>
-          </Grid>
+          <MemberItem classes = {classes} member={member}/>
         ))}
       </Grid>
     </>

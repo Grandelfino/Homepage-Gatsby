@@ -69,6 +69,15 @@ export default function NavBar() {
         <ListItem button component={Link} to="/about_sae">
           <ListItemText primary="SAEについて"/>
         </ListItem>
+        <ListItem button component={Link} to="/dynamic">
+          <ListItemText primary="動的審査"/>
+        </ListItem>
+        <ListItem button component={Link} to="/static">
+          <ListItemText primary="静的審査"/>
+        </ListItem>
+        <ListItem button component={Link} to="/machines">
+          <ListItemText primary="マシン紹介"/>
+        </ListItem>
       </List>
     </div>
   );
