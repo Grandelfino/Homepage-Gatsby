@@ -98,7 +98,6 @@ const CreateTable = (props) => {
     createRow("エンデュランス", enduranceStatus, endurance),
     createRow("燃費", "-", efficiency),
   ]
-  console.log(data)
   const sum = createRow("総合成績", "-", total)
   return (
     <TableContainer component={Paper} className={classes.root} variant="outlined">

@@ -108,8 +108,8 @@ const MachineCard = (props) => {
 
 const Machine = () => {
   const classes = useStyles()
-  const {gcms: {machines}} = useStaticQuery(pageQuery)
-  const {gcms: {histories}} = useStaticQuery(pageQuery)
+  const {gcms: {machines, histories}} = useStaticQuery(pageQuery)
+  
   return (
     <Grid container spacing={3}>
       {machines.map(({...machine}) => (
