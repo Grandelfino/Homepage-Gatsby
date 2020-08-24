@@ -148,7 +148,7 @@ const Machines = () => {
   return (
     <Layout>
       <NavBar/>
-      <Container maxWidth='lg' style={{marginTop: 60}}>
+      <Container maxWidth='lg' style={{marginTop: 10}}>
         <Paper className = {classes.paper}>
         <Title/>
         <Machine/>

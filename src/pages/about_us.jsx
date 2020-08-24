@@ -60,7 +60,7 @@ const AboutUS = () => {
     <>
       <Layout>
         <NavBar/>
-        <Container maxWidth="md" style={{marginTop: 80, paddingLeft: 30, paddingRight: 30}}>
+        <Container maxWidth="md" style={{marginTop:10}}>
           <Paper elevation={3} style={{paddingLeft: 20, paddingRight: 20}}>
             <Grid container>
               <Grid item xs={12}>

@@ -27,7 +27,6 @@ export const useStyle = makeStyles((theme) =>({
   root: {
     flexGrow: 1,
     display: 'flex',
-    paddingTop: theme.spacing(5),
     '& > *': {
       // margin: theme.spacing(3),
       width:'100%',

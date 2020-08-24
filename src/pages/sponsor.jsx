@@ -16,21 +16,6 @@ import {
 import Layout from '../templates/Layout';
 import NavBar from '../templates/NavBar'
 
-const pageQuery = graphql`
-  {
-    gcms {
-      sponsors(orderBy: priority_ASC) {
-        url
-        brief
-        company
-        logo {
-          url 
-        }
-      }
-    }
-  }
-`
-
 export const useStyle = makeStyles((theme) => ({
   root: {
     display: "flex",
@@ -53,7 +38,6 @@ export const useStyle = makeStyles((theme) => ({
     color: "gray",
   },
   cards: {
-    paddingTop: theme.spacing(10),
     display: "flex"
   }
 }));
@@ -120,7 +104,7 @@ const SponsorPage = () => {
     <>
       <Layout>
         <NavBar/>
-        <Container maxWidth="md">
+        <Container maxWidth="md" style={{marginTop: 10}}>
           <Sponsors sponsors={sponsors}/>
         </Container>
       </Layout>
@@ -128,4 +112,19 @@ const SponsorPage = () => {
   )
 }
 
-export default SponsorPage;
+export default SponsorPage
+
+const pageQuery = graphql`
+  {
+    gcms {
+      sponsors(orderBy: priority_ASC) {
+        url
+        brief
+        company
+        logo {
+          url 
+        }
+      }
+    }
+  }
+`

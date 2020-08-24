@@ -69,27 +69,25 @@ const Top = () => {
   const classes = useStyle()
   return(
     <>
-      <div style={{marginTop: 50}}>
-        <BackgroundSection>
-          <Box className={classes.topImage}>
-            <Typography className={classes.topText}>
-              Forumla SAE
+      <BackgroundSection>
+        <Box className={classes.topImage}>
+          <Typography className={classes.topText}>
+            Forumla SAE
+          </Typography>
+          <Container maxWidth="md" style={{paddingBottom: "100px", textAlign:"left"}}>
+            <Typography variant="body1" className={classes.subText}>
+              Formula SAEとは、教室の中だけでは優秀なエンジニアが育たないことにいち早く気づいたアメリカ合衆国において、
+              『ものづくりによる実践的な学生教育プログラム』として、自動車技術者協会 (Society of Automotive Engineers)の主催により、
+              1982年より開催されている、自動車競技会です。 その目的は、フォーミュラカーの設計・製作を通して、 学生に仮想企業を運営させ、
+              実践的な知識を身に付けさせることにあります。
             </Typography>
-            <Container maxWidth="md" style={{paddingBottom: "100px", textAlign:"left"}}>
-              <Typography variant="body1" className={classes.subText}>
-                Formula SAEとは、教室の中だけでは優秀なエンジニアが育たないことにいち早く気づいたアメリカ合衆国において、
-                『ものづくりによる実践的な学生教育プログラム』として、自動車技術者協会 (Society of Automotive Engineers)の主催により、
-                1982年より開催されている、自動車競技会です。 その目的は、フォーミュラカーの設計・製作を通して、 学生に仮想企業を運営させ、
-                実践的な知識を身に付けさせることにあります。
-              </Typography>
-              <Typography variant="body1" className={classes.subText}>
-                現在、アメリカでは140校を超える大学チームが国内外からも参加する国際的な大会になっています。 
-                また、1998年にはイギリスで、2000年にはオーストラリアで、さらにはドイツ、イタリア、ブラジルで 同様のルールによる競技が開催されています。
-              </Typography>
-            </Container>
-          </Box>
-        </BackgroundSection>
-      </div>
+            <Typography variant="body1" className={classes.subText}>
+              現在、アメリカでは140校を超える大学チームが国内外からも参加する国際的な大会になっています。 
+              また、1998年にはイギリスで、2000年にはオーストラリアで、さらにはドイツ、イタリア、ブラジルで 同様のルールによる競技が開催されています。
+            </Typography>
+          </Container>
+        </Box>
+      </BackgroundSection>
     </>
   )
 }

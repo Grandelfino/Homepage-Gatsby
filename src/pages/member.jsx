@@ -129,7 +129,7 @@ const MemberPage = () => {
     <>
       <Layout>
         <NavBar/>
-        <Container maxWidth="md" style={{marginTop: 80, paddingLeft: 10, paddingRight: 10}}>
+        <Container maxWidth="md" style={{marginTop: 10}}>
           <Paper elevation={3} style={{paddingLeft: 20, paddingRight: 20, paddingTop: 10}}>
             <Typography variant="h1" className={classes.roleTitle}>
               メンバー紹介

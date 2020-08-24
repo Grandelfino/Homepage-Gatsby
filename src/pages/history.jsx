@@ -170,7 +170,7 @@ const HistoryPage = () => {
   return(
     <Layout>
       <NavBar/>
-      <Container maxWidth="lg" style={{paddingTop: 55}}>
+      <Container maxWidth='md' style={{paddingTop: 10}}>
         <Paper style={{paddingLeft: 20, paddingRight: 20, paddingTop: 1}} elevation={3}>
           <HistoryTable/>
         </Paper>

@@ -3,6 +3,7 @@
  *
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
+const config = require('./config/site');
 
 module.exports = {
   /* Your site config here */
