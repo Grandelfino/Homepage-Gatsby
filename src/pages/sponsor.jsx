@@ -118,8 +118,7 @@ export const Sponsors = (props) => {
 }
 
 const SponsorPage = () => {
-  const {gcms: {sponsors}} = useStaticQuery(pageQuery)
-  const {gcms: {specials}} = useStaticQuery(pageQuery)
+  const {gcms: {sponsors, specials}} = useStaticQuery(pageQuery)
   const classes = useStyle()
   return (
     <>
