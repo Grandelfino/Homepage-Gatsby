@@ -73,7 +73,7 @@ function SponsorCard (props) {
   if (url) {
     CardAction = 
       <CardActions>
-        <Button size="small" color="primary" component={Link} to={url}>
+        <Button size="large" color="primary" component={Link} to={url} target="_blank">
           スポンサー様HPへ
         </Button>
       </CardActions>;

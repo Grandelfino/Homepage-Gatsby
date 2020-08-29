@@ -1,4 +1,5 @@
 import React from "react";
+import  makeStyles from "@material-ui/styles/makeStyles"
 import { ThemeProvider, createMuiTheme, CssBaseline } from "@material-ui/core";
 import blue from '@material-ui/core/colors/blue';
 
@@ -50,14 +51,21 @@ const theme = createMuiTheme({
     }
   },
 });
-
+export const useStyle = makeStyles({
+  footer: {
+    textAlign: 'center'
+  },
+});
 export default function Layout (props) {
+  const classes = useStyle()
   return(
   <ThemeProvider theme={theme}>
     <CssBaseline/>
     {props.children}
     <footer>
-      <p>© All rights reserved by Grandelfino.</p>
+      <div className={classes.footer}>
+        <p>© All rights reserved by Grandelfino.</p>
+      </div>
     </footer>
   </ThemeProvider>
   )
