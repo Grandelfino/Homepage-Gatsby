@@ -105,6 +105,7 @@ function SponsorCard (props) {
 export const Sponsors = (props) => {
   const classes = useStyle()
   const sponsors = props.sponsors
+  // console.log(sponsors)
   return(
     <Grid container spacing={1} className={classes.cards}>
       {sponsors.map(({...sponsor}) => (
@@ -118,8 +119,8 @@ export const Sponsors = (props) => {
 
 const SponsorPage = () => {
   const {gcms: {sponsors}} = useStaticQuery(pageQuery)
+  const {gcms: {specials}} = useStaticQuery(pageQuery)
   const classes = useStyle()
-
   return (
     <>
       <Layout>
@@ -136,6 +137,10 @@ const SponsorPage = () => {
               2020年度スポンサー様ご紹介
             </Typography>
             <Sponsors sponsors={sponsors}/>
+            <Typography variant="h1" className={classes.head}>
+              スペシャルサンクス
+            </Typography>
+            <Sponsors sponsors={specials}/>
           </Paper>
         </Container>
       </Layout>
@@ -149,6 +154,14 @@ const pageQuery = graphql`
   {
     gcms {
       sponsors(orderBy: priority_ASC) {
+        url
+        brief
+        company
+        logo {
+          url 
+        }
+      }
+      specials(orderBy: priority_ASC) {
         url
         brief
         company
