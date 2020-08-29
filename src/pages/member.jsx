@@ -16,6 +16,8 @@ import {
   Paper,
 } from '@material-ui/core'
 
+import SEO from '../components/SEO'
+
 import Layout from '../templates/Layout'
 import NavBar from '../templates/NavBar'
 
@@ -128,6 +130,7 @@ const MemberPage = () => {
   return (
     <>
       <Layout>
+        <SEO title="Grandelfino - Members"/>
         <NavBar/>
         <Container maxWidth="md" style={{marginTop: 10}}>
           <Paper elevation={3} style={{paddingLeft: 20, paddingRight: 20, paddingTop: 10}}>

@@ -17,6 +17,8 @@ import {
   makeStyles,
 } from '@material-ui/core'
 
+import SEO from '../components/SEO'
+
 import Layout from '../templates/Layout'
 import NavBar from '../templates/NavBar'
 
@@ -169,6 +171,7 @@ const HistoryTable = (props) => {
 const HistoryPage = () => {
   return(
     <Layout>
+      <SEO title="Grandelfino - Histories"/>
       <NavBar/>
       <Container maxWidth='md' style={{paddingTop: 10}}>
         <Paper style={{paddingLeft: 20, paddingRight: 20, paddingTop: 1}} elevation={3}>

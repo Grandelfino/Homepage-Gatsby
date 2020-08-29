@@ -20,6 +20,7 @@ import index_1 from '../images/index/index_1.jpg';
 
 import Layout from '../templates/Layout'
 import NavBar from '../templates/NavBar';
+import SEO from '../components/SEO'
 
 import Image from '../components/Image'
 
@@ -238,6 +239,7 @@ export default function Home() {
   return (
     <>
       <Layout>
+        <SEO/>
         <NavBar/>
         <Top/>
         <Container maxWidth='md'>

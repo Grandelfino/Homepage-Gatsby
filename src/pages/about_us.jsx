@@ -1,22 +1,14 @@
-import React, { useState }from 'react'
-import clsx from 'clsx'
+import React from 'react'
 import {
   Container,
   Grid,
-  Card,
-  CardContent,
-  CardMedia,
   Typography,
   makeStyles,
   Divider,
-  CardActions,
-  Collapse,
   Paper,
 } from '@material-ui/core'
 
-import IconButton from '@material-ui/core/IconButton';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-
+import SEO from '../components/SEO'
 import Image from '../components/Image'
 import Layout from '../templates/Layout'
 import NavBar from '../templates/NavBar'
@@ -45,20 +37,12 @@ const useStyle = makeStyles((theme) => ({
   },
 }));
 
-const ActivityContent = () => {
-  const classes = useStyle();
-
-  return(
-    <>
-    </>
-  )
-}
-
 const AboutUS = () => {
   const classes = useStyle()
   return(
     <>
       <Layout>
+        <SEO title="Grandelfino - About US"/>
         <NavBar/>
         <Container maxWidth="md" style={{marginTop:10}}>
           <Paper elevation={3} style={{paddingLeft: 20, paddingRight: 20}}>
@@ -164,7 +148,7 @@ const AboutUS = () => {
                 </Typography>
               </Grid>
               <Grid item xs={12} sm={4}>
-                <Image filename={"Extracurricular.jpg"} alt="Extracurricular"/>
+                <Image filename={"Meeting.jpg"} alt="Extracurricular"/>
               </Grid>
               <Grid item xs={12}>
                 <Divider/>
@@ -179,7 +163,7 @@ const AboutUS = () => {
                 </Typography>
               </Grid>
               <Grid item xs={12} sm={4}>
-                <Image filename={"Extracurricular.jpg"} alt="Extracurricular"/>
+                <Image filename={"Testing.png"} alt="Testing"/>
               </Grid> 
             </Grid>
           </Paper>

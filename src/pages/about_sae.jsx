@@ -17,8 +17,8 @@ import BackgroundImage from 'gatsby-background-image'
 
 import Image from '../components/Image'
 
-import Logo from '../images/sae/JFSAE_logo.png'
 
+import SEO from '../components/SEO'
 import Layout from '../templates/Layout'
 import NavBar from '../templates/NavBar'
 
@@ -138,7 +138,7 @@ const Event = () => {
           <Card variant='outlined'>
             <CardActionArea
               component={Link}
-              to='/'
+              to='/static'
               >
               <CardMedia
                 style={{width: '100%', objectFit: 'fill'}}
@@ -158,7 +158,7 @@ const Event = () => {
           <Card variant='outlined'>
             <CardActionArea
               component={Link}
-              to='/'
+              to='/dynamic'
               >
               <CardMedia
                 style={{ width: '100%', alignItems: 'center', justifyContent: 'center'}}
@@ -182,6 +182,7 @@ const Event = () => {
 const AboutSAE = () => {
   return(
     <Layout>
+      <SEO title="Grandelfino - About FSAE"/>
       <NavBar/>
       <Top/>
       <Container maxWidth='lg'>

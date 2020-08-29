@@ -56,6 +56,9 @@ export default function Layout (props) {
   <ThemeProvider theme={theme}>
     <CssBaseline/>
     {props.children}
+    <footer>
+      <p>© All rights reserved by Grandelfino.</p>
+    </footer>
   </ThemeProvider>
   )
 }

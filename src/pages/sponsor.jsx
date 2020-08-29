@@ -11,7 +11,10 @@ import {
   CardActions, 
   Button,
   Grid,
+  Paper,
   } from '@material-ui/core';
+
+import SEO from '../components/SEO'
 
 import Layout from '../templates/Layout';
 import NavBar from '../templates/NavBar'
@@ -24,6 +27,18 @@ export const useStyle = makeStyles((theme) => ({
   media: {
     height: 200,
     objectFit: 'contain'
+  },
+  head: {
+    textAlign: 'left',
+    fontFamily: 'Noto Sans JP',
+    fontSize: '2rem',
+    margin: theme.spacing(3)
+  },
+  body: {
+    textAlign: 'left',
+    fontFamily: 'Noto Sans JP',
+    fontSize: '0.96rem',
+    margin: theme.spacing(1)
   },
   title: {
     textAlign: 'center',
@@ -39,6 +54,11 @@ export const useStyle = makeStyles((theme) => ({
   },
   cards: {
     display: "flex"
+  },
+  paper: {
+    paddingTop: theme.spacing(1),
+    paddingLeft: theme.spacing(3),
+    paddingRight: theme.spacing(3),
   }
 }));
 
@@ -61,7 +81,7 @@ function SponsorCard (props) {
 
   return (
     <>
-      <Card className={classes.root}>
+      <Card className={classes.root} elevation={3}>
         <CardMedia
           className={classes.media}
           component="img"
@@ -103,9 +123,20 @@ const SponsorPage = () => {
   return (
     <>
       <Layout>
+        <SEO title="Grandelfino - Sponsors"/>
         <NavBar/>
-        <Container maxWidth="md" style={{marginTop: 10}}>
-          <Sponsors sponsors={sponsors}/>
+        <Container maxWidth="lg" style={{marginTop: 10}}>
+          <Paper className={classes.paper}>
+            <Typography variant="body1" className={classes.body}>
+              私たちGrandelfinoの活動をさまざまな形でご支援していただいているスポンサー様方々の紹介です。 
+              温かいご支援を胸に、よいフォーミュラーカーを作れるよう日々努力していきますので、 Grandelfinoをなにとぞよろしくお願いします。
+            </Typography>
+            <Typography variant="h1" className={classes.head}>
+              {/* Change HERE!!! */}
+              2020年度スポンサー様ご紹介
+            </Typography>
+            <Sponsors sponsors={sponsors}/>
+          </Paper>
         </Container>
       </Layout>
     </>

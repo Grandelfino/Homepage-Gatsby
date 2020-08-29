@@ -6,10 +6,8 @@ import {
   Container, 
   Paper, 
   Typography, 
-  Box,
   Card,
   CardActions,
-  CardActionArea,
   CardMedia,
   CardContent,
   Divider,
@@ -17,7 +15,7 @@ import {
   } from '@material-ui/core'
 
 import Image from '../components/Image'
-
+import SEO from '../components/SEO'
 import Layout from '../templates/Layout'
 import NavBar from '../templates/NavBar'
 
@@ -147,6 +145,7 @@ const Machines = () => {
   const classes = useStyles()
   return (
     <Layout>
+      <SEO title="Grandelfino - Machines"/>
       <NavBar/>
       <Container maxWidth='lg' style={{marginTop: 10}}>
         <Paper className = {classes.paper}>
