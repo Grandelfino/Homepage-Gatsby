@@ -119,6 +119,8 @@ export const Sponsors = (props) => {
 
 const SponsorPage = () => {
   const {gcms: {sponsors, specials}} = useStaticQuery(pageQuery)
+  const year = new Date().getFullYear()
+  const catYear = year + "年度スポンサー様ご紹介"
   const classes = useStyle()
   return (
     <>
@@ -132,8 +134,7 @@ const SponsorPage = () => {
               温かいご支援を胸に、よいフォーミュラーカーを作れるよう日々努力していきますので、 Grandelfinoをなにとぞよろしくお願いします。
             </Typography>
             <Typography variant="h1" className={classes.head}>
-              {/* Change HERE!!! */}
-              2020年度スポンサー様ご紹介
+              {catYear}
             </Typography>
             <Sponsors sponsors={sponsors}/>
             <Typography variant="h1" className={classes.head}>

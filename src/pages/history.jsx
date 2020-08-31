@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
 const createRow = (event, status, scores) => {
   const score = scores[0]
   const fullMark = scores[1]
-  const rank = scores[2]
+  const rank = scores[2] || '-'
   return {event, status, score, fullMark, rank}
 }
 
@@ -85,7 +85,7 @@ const CreateTable = (props) => {
   const autocrossStatus = data.autoclossStatus
   const endurance = data.endurance
   const enduranceStatus = data.enduranceStatus
-  const efficiency = data.efficiency
+  const efficiency = data.efficiency || '-'
   const total = data.total
 
   const staticRows = [
