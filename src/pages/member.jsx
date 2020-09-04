@@ -21,20 +21,6 @@ import SEO from '../components/SEO'
 import Layout from '../templates/Layout'
 import NavBar from '../templates/NavBar'
 
-const pageQuery = graphql`
-  {
-    gcms {
-      members {
-        id
-        name
-        role
-        grade
-        charge
-      }
-    }
-  }
-`
-
 const useStyle = makeStyles((theme) => ({
   root: {
     display: "flex",
@@ -132,8 +118,8 @@ const MemberPage = () => {
       <Layout>
         <SEO title="Grandelfino - Members"/>
         <NavBar/>
-        <Container maxWidth="lg" style={{marginTop: 10}}>
-          <Paper elevation={3} style={{paddingLeft: 20, paddingRight: 20, paddingTop: 10}}>
+        <Container maxWidth="lg" style={{marginTop: 10, marginBottom: 10}}>
+          <Paper elevation={3} style={{padding: 20}}>
             <Typography variant="h1" className={classes.roleTitle}>
               メンバー紹介
             </Typography>
@@ -185,3 +171,17 @@ const MemberPage = () => {
 }
 
 export default MemberPage;
+
+const pageQuery = graphql`
+  {
+    gcms {
+      members (orderBy: charge_ASC) {
+        id
+        name
+        role
+        grade
+        charge
+      }
+    }
+  }
+`
