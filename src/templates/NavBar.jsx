@@ -85,7 +85,7 @@ export default function NavBar() {
           <ListItemText disableTypography
             primary={<Typography style={{fontSize: '1rem'}}>Home</Typography>} />
         </ListItem>
-        <ListItem button component={Link} to="/about_us">
+        <ListItem button component={Link} to="/aboutUS">
           <ListItemIcon>
             <Group/>
           </ListItemIcon>
@@ -115,7 +115,7 @@ export default function NavBar() {
           </ListItemIcon>
           <ListItemText primary="活動記録"/>
         </ListItem>
-        <ListItem button component={Link} to="/contact_us">
+        <ListItem button component={Link} to="/contactUS">
           <ListItemIcon>
             <PlaceIcon/>
           </ListItemIcon>
@@ -144,7 +144,7 @@ export default function NavBar() {
         </ListItem>
         <Collapse in={saeOpen} timeout='auto' unmountOnExit>
           <List>
-            <ListItem button className={classes.nested} component={Link} to='/about_sae'>
+            <ListItem button className={classes.nested} component={Link} to='/aboutSAE'>
               <ListItemText primary="学生フォーミュラとは" />
             </ListItem>
             <ListItem button className={classes.nested} component={Link} to='/static'>
