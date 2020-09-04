@@ -43,7 +43,7 @@ export const useStyle = makeStyles((theme) => ({
 
 const Map = () => (
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26133.35813559401!2d135.76448184572882!3d35.03999048728186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6001083a678e4a47%3A0x3d8dffcd82f43cff!2z5a2m55Sf44OV44Kp44O844Of44Ol44Op44OX44Ot44K444Kn44Kv44OIIEdyYW5kZWxmaW5v!5e0!3m2!1sja!2sjp!4v1599225838707!5m2!1sja!2sjp" 
-width="800" height="450" frameborder="0" style={{border:0}} allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+width="90%" height="450" frameborder="0" style={{border:0}} allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 )
 const Contact = () => {
   const classes = useStyle()

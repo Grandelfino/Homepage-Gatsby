@@ -28,6 +28,9 @@ const useStyles = makeStyles((theme) => ({
   table: {
     minWidth: 750,
   },
+  award: {
+    minWidth: '100%'
+  },
   title: {
     fontFamily: "Noto Sans JP",
     margin: theme.spacing(2),
@@ -110,7 +113,7 @@ const AwardTable = (props) => {
 
   return(
     <TableContainer component={Paper} className={classes.root} variant="outlined">
-      <Table className={classes.table} aria-label="award table">
+      <Table className={classes.award} aria-label="award table">
         <TableHead>
           <TableRow>
             <StyledTableCell align="center" style={{fontSize: "1.1rem"}}>

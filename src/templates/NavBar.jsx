@@ -109,7 +109,7 @@ export default function NavBar() {
           </ListItemIcon>
           <ListItemText primary="マシン紹介"/>
         </ListItem>
-        <ListItem button component={Link} to="https://www.grandelfino.net/blog/" target="_blank">
+        <ListItem button component={Link} to="https://blog.grandelfino.net/" target="_blank">
           <ListItemIcon>
             <Assignment/>
           </ListItemIcon>
