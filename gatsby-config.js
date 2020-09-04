@@ -38,6 +38,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     'gatsby-plugin-material-ui',
     "gatsby-plugin-styled-components",
+    `gatsby-plugin-react-helmet`,
     'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-transformer-remark',
