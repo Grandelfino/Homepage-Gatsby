@@ -53,6 +53,8 @@ module.exports = {
           },
         ]
       },
+    },
+    {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: config.title,
