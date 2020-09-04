@@ -122,7 +122,7 @@ export const Top = () => {
           </Typography>
           <Button 
             component={Link}
-            to="/about_us"
+            to="/aboutUS"
             color="primary" 
             variant="outlined" 
             className={classes.aboutButton}
@@ -158,7 +158,7 @@ const  AboutUS = () => {
             color='default'
             className={classes.button}
             component={Link}
-            to="/about_us"
+            to="/aboutUS"
             >
             More Detail
           </Button>
@@ -191,7 +191,7 @@ const  AboutSAE = () => {
           color='default'
           className={classes.button}
           component={Link}
-          to="/about_sae"
+          to="/aboutSAE"
           >
           More Detail
         </Button>
