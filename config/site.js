@@ -7,7 +7,7 @@ module.exports = {
   siteUrl: 'https://www.grandelfino.net/', // スラッシュありのサイトURL
   siteLanguage: 'ja', // HTMLの言語（ここでは日本語）
   logo: 'src/images/teamlogo.png',
-  banner: '/teamlogo.jpg',
+  banner: '/teamlogo.png',
   favicon: 'src/images/teamlogo.png', // ファビコン
   shortName: 'Grandelfino', // サイトの略称、12文字以下
   author: 'grandelfino', // schemaORGJSONLDの作成者
