@@ -238,8 +238,8 @@ const  AboutSponsor = () => {
 export default function Home() {
   return (
     <>
+      <SEO/>
       <Layout>
-        <SEO/>
         <NavBar/>
         <Top/>
         <Container maxWidth='md'>
