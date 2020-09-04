@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql, useStaticQuery, Link } from 'gatsby'
-import { makeStyle } from '@material-ui/core/styles'
+import { makeStyles, withStyles } from '@material-ui/core/styles'
 import {
   Table,
   TableBody,
@@ -14,7 +14,6 @@ import {
   Box,
   Typography,
   Divider,
-  makeStyles,
 } from '@material-ui/core'
 
 import SEO from '../components/SEO'
@@ -70,10 +69,68 @@ const RowTable = (props) => {
   )
 }
 
+const StyledTableCell = withStyles((theme) => ({
+  head: {
+    backgroundColor: theme.palette.common.black,
+    color: theme.palette.common.white,
+  },
+  body: {
+    fontSize: 14,
+  },
+}))(TableCell);
+
+const StyledTableRow = withStyles((theme) => ({
+  root: {
+    '&:nth-of-type(odd)': {
+      backgroundColor: theme.palette.action.hover,
+    },
+  },
+}))(TableRow);
+
+const AwardTable = (props) => {
+  const classes = useStyles()
+  const data = props.award
+  let award_items = 
+    <StyledTableRow>
+      <StyledTableCell align="center"> 
+        None
+      </StyledTableCell>
+    </StyledTableRow>
+  
+  if (data.length > 0) {
+  award_items = 
+    Object.values(data).map((item) => (
+      <StyledTableRow>
+        <StyledTableCell align="center">
+          {item}
+        </StyledTableCell>
+      </StyledTableRow>
+  ))
+    }
+
+  return(
+    <TableContainer component={Paper} className={classes.root} variant="outlined">
+      <Table className={classes.table} aria-label="award table">
+        <TableHead>
+          <TableRow>
+            <StyledTableCell align="center" style={{fontSize: "1.1rem"}}>
+              受賞一覧
+            </StyledTableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {award_items}
+        </TableBody>
+      </Table>
+    </TableContainer>
+  )
+}
+
 const CreateTable = (props) => {
   const classes = useStyles()
 
   const data = props.history
+  const award = data.award || '-'
   const cost = data.cost
   const presentation = data.presentation
   const design = data.design
@@ -121,8 +178,8 @@ const CreateTable = (props) => {
           </TableRow>
         </TableHead>
         <TableBody>
-          <RowTable row={staticRows} total={sum}/>
-          <RowTable row={dynamicRows} total={sum}/>
+          <RowTable row={staticRows} />
+          <RowTable row={dynamicRows} />
           <TableCell colSpan={3} align="center">総合成績</TableCell>
           <TableCell align="right">{sum.score}({sum.fullMark})</TableCell>
           <TableCell align="right">{sum.rank}</TableCell>
@@ -162,6 +219,7 @@ const HistoryTable = (props) => {
         </Typography>
         <CreateTable history={history}/>
         <Divider/>
+        <AwardTable award={history.award}/>
       </div>
       </>
     ))
@@ -173,7 +231,7 @@ const HistoryPage = () => {
     <Layout>
       <SEO title="Grandelfino - Histories"/>
       <NavBar/>
-      <Container maxWidth='md' style={{paddingTop: 10}}>
+      <Container maxWidth='lg' style={{paddingTop: 10}}>
         <Paper style={{paddingLeft: 20, paddingRight: 20, paddingTop: 1}} elevation={3}>
           <HistoryTable/>
         </Paper>
