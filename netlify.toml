@@ -1,0 +1,5 @@
+[[redirects]]
+from = "https://www.grandelfino.net/blog/*"
+to = "https://blog.grandelfino.net"
+status = 301
+force = true
