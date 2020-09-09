@@ -12,6 +12,13 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingID: process.env.GOOGLE_ANALYTICS_TRACKING_ID,
+        head: true,
+      }
+    },
+    {
       resolve: `gatsby-source-filesystem`,
           options: {
               name: `images`,
@@ -32,12 +39,6 @@ module.exports = {
         typeName: 'GraphCMS',
         fieldName: `gcms`,
         url: `https://api-ap-northeast-1.graphcms.com/v2/ckd55w41a590m01zbh8wwbl4i/master`
-      }
-    },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingID: config.googleAnalyticsID
       }
     },
     `gatsby-transformer-sharp`,
