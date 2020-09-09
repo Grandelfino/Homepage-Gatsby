@@ -14,4 +14,5 @@ module.exports = {
   themeColor: '#34abeb',
   backgroundColor: '#d3edff',
   twitter: '@grandelfino_kit', // TwitterのID
+  googleAnalyticsID: "UA-177534481-1"
 };

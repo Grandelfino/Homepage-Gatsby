@@ -34,6 +34,12 @@ module.exports = {
         url: `https://api-ap-northeast-1.graphcms.com/v2/ckd55w41a590m01zbh8wwbl4i/master`
       }
     },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingID: config.googleAnalyticsID
+      }
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     'gatsby-plugin-material-ui',
