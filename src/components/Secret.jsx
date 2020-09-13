@@ -17,7 +17,6 @@ import {
 import { isLoggedIn, logout } from "../service/auth"
 
 const Secret = () => {
-  console.log(isLoggedIn())
   const logoutHandler = () => {
     navigate('/')
     return

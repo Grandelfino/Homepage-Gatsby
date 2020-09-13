@@ -5,6 +5,10 @@
  */
 const config = require('./config/site');
 
+require("dotenv").config({
+  path: `./.env`,
+})
+
 module.exports = {
   /* Your site config here */
   siteMetadata: {
@@ -14,7 +18,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID,
+        trackingId: process.env.GATSBY_GOOGLE_ANALYTICS_TRACKING_ID,
         head: true,
       }
     },

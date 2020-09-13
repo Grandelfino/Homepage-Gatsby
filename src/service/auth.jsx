@@ -1,6 +1,7 @@
 // src/services/auth.js
-const userName = process.env.USER
-const pass = process.env.PASS
+
+const USER = process.env.GATSBY_USER
+const PASS = process.env.GATSBY_PASS
 
 export const isBrowser = () => typeof window !== "undefined"
 
@@ -13,7 +14,7 @@ const setUser = user =>
   window.localStorage.setItem("gatsbyUser", JSON.stringify(user))
 
 export const handleLogin = ({ username, password }) => {
-  if (username === {userName} && password === {pass}) {
+  if (username === USER && password === PASS) {
     return (
       setUser({
         username: `grandelfino`,
