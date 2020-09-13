@@ -2,6 +2,7 @@ import React from "react";
 import  makeStyles from "@material-ui/styles/makeStyles"
 import { ThemeProvider, createMuiTheme, CssBaseline } from "@material-ui/core";
 import blue from '@material-ui/core/colors/blue';
+import red from '@material-ui/core/colors/red'
 
 const theme = createMuiTheme({
   palette: {
@@ -11,7 +12,6 @@ const theme = createMuiTheme({
       main: blue["500"],
       dark: blue["600"]
     },
-    // primary: red,
   },
   typography: {
     fontFamily: [

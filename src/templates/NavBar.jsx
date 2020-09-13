@@ -29,6 +29,7 @@ import SportsMotorsportsIcon from '@material-ui/icons/SportsMotorsports'
 import Policy from '@material-ui/icons/Policy'
 import Assignment from '@material-ui/icons/Assignment'
 import PlaceIcon from '@material-ui/icons/Place'
+import VpnKeyIcon from '@material-ui/icons/VpnKey';
 
 import { ThemeConsumer } from 'styled-components';
 
@@ -160,6 +161,12 @@ export default function NavBar() {
             <Policy/>
           </ListItemIcon>
           <ListItemText primary="サイトポリシー"/>
+        </ListItem>
+        <ListItem button component={Link} to="/login/auth">
+          <ListItemIcon>
+            <VpnKeyIcon/>
+          </ListItemIcon>
+          <ListItemText primary="Private"/>
         </ListItem>
       </List>
     </div>

@@ -14,4 +14,6 @@ module.exports = {
   themeColor: '#34abeb',
   backgroundColor: '#d3edff',
   twitter: '@grandelfino_kit', // TwitterのID
+  username: process.env.USER,
+  password: process.env.PASS,
 };
